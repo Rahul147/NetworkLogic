@@ -20,11 +20,11 @@ int main(void) {
 	len = strlen(text);
 
 	do {
-		p = rand()%3000;
+		p = rand()%100;
 	} while(!prime(p));
 
 	do {
-		q = rand()%3000;
+		q = rand()%100;
 	} while(!prime(q));
 
 	n = p * q;
@@ -55,10 +55,11 @@ int main(void) {
 	for (i = 0; i < len; i++) {
 		cout<<cipher[i];
 	}
+
 	cout<<endl;
+
 	for(i = 0; i < len; i++) {
 		text[i] = decrpt(cipher[i]);
-		//cout<<text[i]<<"\n"<<endl;
 	}
 		
 
@@ -85,16 +86,22 @@ return gcd(b, a%b);
 
 int encrpt(char ch) {
 	long int temp = ch;
-	for (i = 1; i < e; i++)
-		temp = (temp *ch) % n; //cout<<temp<<endl;
+	for (i = 1; i < e; i++) {
+		temp = (temp *ch) % n; 
+		cout<<temp<<endl;
+	}
+		
 
 return temp;
 }
 
 char decrpt(long int ch) {
 	long int temp = ch;
-	for(i = 1; i < d; i++)
+	for(i = 1; i < d; i++) {
 		ch = (temp * ch) %n; 
+		cout<<ch<<endl;
+	}
+		
 
 return ch;
 }
