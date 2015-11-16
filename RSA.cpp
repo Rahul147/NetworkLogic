@@ -20,11 +20,11 @@ int main(void) {
 	len = strlen(text);
 
 	do {
-		p = rand()%100;
+		p = rand()%1000;
 	} while(!prime(p));
 
 	do {
-		q = rand()%100;
+		q = rand()%1000;
 	} while(!prime(q));
 
 	n = p * q;
@@ -46,7 +46,7 @@ int main(void) {
 	cout<<"Public key (N, E): "<<"("<<n<<", "<<e<<")"<<endl;
 
 	cout<<"Private key (Phi, D): "<<"("<<phi<<", "<<d<<")"<<endl;
-
+	 
 	for(i = 0; i < len; i++)
 		cipher[i] = encrpt(text[i]);
 
@@ -88,7 +88,7 @@ int encrpt(char ch) {
 	long int temp = ch;
 	for (i = 1; i < e; i++) {
 		temp = (temp *ch) % n; 
-		cout<<temp<<endl;
+		//cout<<temp<<endl;
 	}
 		
 
@@ -99,7 +99,7 @@ char decrpt(long int ch) {
 	long int temp = ch;
 	for(i = 1; i < d; i++) {
 		ch = (temp * ch) %n; 
-		cout<<ch<<endl;
+		//cout<<ch<<endl;
 	}
 		
 
