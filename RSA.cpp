@@ -9,22 +9,22 @@ int gcd(long int, long int);
 int encrpt(char);
 char decrpt(long int);
 
-long int i, e, d, n, p, q, phi, cipher[50];
+long int i, e, d, n, p, q, phi, cipher[500];
 
 int main(void) {
 	int i, len;
-	char text[50];
+	char text[500];
 	cout<<"Enter Text to be Encripted: "<<endl;
 	cin>>text;
 
 	len = strlen(text);
 
 	do {
-		p = rand()%1000;
+		p = rand()%50;
 	} while(!prime(p));
 
 	do {
-		q = rand()%1000;
+		q = rand()%50;
 	} while(!prime(q));
 
 	n = p * q;
